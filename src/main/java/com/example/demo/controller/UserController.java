@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,6 +35,32 @@ public class UserController {
 		
 		return mv;
 	}
+	
+	@GetMapping("/getall")
+	public ModelAndView getalllist(@ModelAttribute ("user") User user, @ModelAttribute("userdetails") UserDetails userdetails) {
+		
+		ModelAndView mv = new ModelAndView();
+		List<User> usr = userService.getallist();
+		mv.addObject("usr",usr);
+		mv.setViewName("getall");
+		
+		return mv;}
+	
+//	@GetMapping("/allusers")
+//	public ModelAndView getAllUsers(@ModelAttribute ("userdetails") UserDetails userdetails) {
+//		
+//		ModelAndView mv = new ModelAndView();
+//		List<UserDetails> usersList = userDetailsService.getUsersList();
+//		mv.setViewName("userslist");
+//		mv.addObject("usersList",usersList);
+//		
+//		
+//		return mv;
+//	}
+//	
+	
+	
+	
 	
 //	@DeleteMapping("/deleteUserById")
 //	public ModelAndView deleteUserById(@RequestParam ("id") Long userId) {

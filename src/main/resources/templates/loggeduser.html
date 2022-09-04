@@ -3,10 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <title>User Login Page</title>
+<style>
+.c{
+padding-top:200px;
+padding-left:450px;
+}
+#z{
+padding-left:100px;
+}
+</style>
 </head>
-<body>
-		<p>Logged in successfull</p>
+<body bgcolor="orange"><div class="c">
+		<h1>Logged in successfull</h1>
+		<h2><a class="nav-link active" aria-current="page" th:href="@{/update}">update</a><br><br>
+		<a class="nav-link active" aria-current="page" th:href="@{/delete}">delete</a><br><br>
+		<a class="nav-link active" aria-current="page" th:href="@{/getall}">alldata</a></h2>
+		</div>
+		<br><br>
+		
+		<div id="z">
 	
-		<p th:text="${userData}"/>
+		<p th:text="${userData}"/></div>
+		
 </body>
 </html>

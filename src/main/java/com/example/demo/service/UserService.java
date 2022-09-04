@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import com.example.demo.entities.User;
 import com.example.demo.exceptions.InvalidCredentialsException;
 
@@ -17,6 +19,8 @@ public interface UserService {
 		public void deleteUserById(Long id);
 		
 		public User loginUser(User user) throws InvalidCredentialsException;
+		
+		public List<User>getallist();
 		
 		
 }
