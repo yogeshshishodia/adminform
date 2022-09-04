@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registration Form</title>
+<style>
+.a {
+	padding-top: 150px;
+	padding-left: 450px;
+	;
+}
+
+.b {
+	color: red; text-decoration : blink;
+	padding-top: 50px;
+	padding-left: 450px;
+	text-decoration: blink;
+}
+
+.c {
+	padding-top: 50px;
+	padding-left: 450px;
+	;
+}
+</style>
+</head>
+<body bgcolor="yellow">
+	<div class="a">
+		<p>Login Page (please enter your username and password)</p>
+		<!-- we use *  to POST data and  $ to GET data i.e. *{varName} & i${varName}  -->
+		<form action="#" th:action="@{/login}" th:object="${user}"
+			method="post">
+
+			<p>
+				User Name : <input type="text" th:field="*{userName}" />
+			</p>
+			<p>
+				Password : <input type="password" th:field="*{password}" />
+			</p>
+			<p>
+				<input type="submit" value="Login" />
+			</p>
+			
+			<div class="b">
+
+		<h3>
+
+			<p th:text="${errormsg}" />
+
+		</h3>
+	</div>
+	
+	
+		</form>
+
+	</div>
+	<div class="c">
+		<form action="#" th:action="@{/login}" th:object="${user}"
+			th:method="post">
+
+			<p>
+				<input type="submit" value="Reset" />
+			</p>
+
+		</form>
+	</div>
+
+	
+
+
+
+
+</body>
+</html>

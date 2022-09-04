@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin View</title>
+</head>
+<body>
+<h2> Welcome Admin!</h2>
+
+<table align="center">
+<tr> 
+<td><a class="nav-link-active" aria-current="page" th:href="@{/update}">UPDATE</a></td>
+<td><a class="nav-link-active" aria-current="page" th:href="@{/delete}">DELETE</a></td>
+</tr>
+
+</table>
+
+<div>
+<form action="#" th:action="@{/login}" th:object="${user}"
+		th:method="post">
+		
+		<p>
+			<input type="submit" value="Logout" />
+		</p>
+		
+		</form>
+
+
+
+</body>
+</html>
